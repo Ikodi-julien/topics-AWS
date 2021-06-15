@@ -1,0 +1,16 @@
+  <aside class="categories__container">
+    <ul class="categories__list">
+      <% categories.forEach(category => { %>
+      <li class="categories__list__element">
+        <a href="/categories/<%=  category.name %>"
+            ><%= category.name %>
+        </a>
+      </li>
+      <% }); %>
+    </ul>
+    <img
+        class="categories__category__image"
+        src="/src/assets/browse/<%= currentCategory.name %>.png"
+        alt="<%= currentCategory.name %>"
+    />
+  </aside>

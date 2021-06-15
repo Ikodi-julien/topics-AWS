@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "topics",
+  "info": {
+    "name": "topic",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "topic_description": {
+      "type": "json"
+    },
+    "messages": {
+      "via": "topic",
+      "collection": "message"
+    },
+    "category": {
+      "model": "category",
+      "via": "topics"
+    },
+    "author": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "topics"
+    },
+    "topic_content": {
+      "type": "json"
+    },
+    "author_name": {
+      "type": "string"
+    }
+  }
+}

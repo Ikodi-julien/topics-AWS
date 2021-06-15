@@ -1,0 +1,191 @@
+@use './abstract/colors'as color;
+@use './abstract/sizes'as size;
+
+.header {
+  position: relative;
+  background-color: color.$verylightblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  height: 9vh;
+
+  &__logo {
+    color: color.$darkblue;
+    font-size: 2rem;
+
+    & a>h1 {
+      font-family: 'Suez One', serif;
+      font-size: 47px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 61px;
+      letter-spacing: -0.095em;
+      text-align: left;
+    }
+  }
+
+  &__nav {
+    width: 60%;
+    color: color.$mediumblue;
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width: 1200px) {
+      position: fixed;
+      top: -3000px;
+      width: 100%;
+      height: 100vh;
+      padding: 60px 0;
+      flex-direction: column;
+      justify-content: space-evenly;
+      background-color: color.$verylightblue;
+      z-index: 3;
+      transition: top 300ms;
+      overflow: hidden;
+    }
+
+    &__links {
+      padding: 1vw;
+      display: flex;
+
+      @media screen and (max-width: 1200px) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      &__link {
+        font-family: 'PT Mono', serif;
+        padding: 10px;
+        margin-right: 2vw;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 28px;
+
+        &:hover {
+          text-decoration: underline wavy;
+        }
+      }
+    }
+
+    &__loginButton {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      width: 120px;
+      height: 50px;
+      font-family: 'PT Mono', serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      border: 3px solid #4D5497;
+      box-sizing: border-box;
+      border-radius: 2px;
+      padding: 10px 8px;
+
+      &:hover>a {
+        color: #EFF8FA;
+        text-decoration: underline wavy;
+      }
+
+      &:hover:before {
+        transform: scale(18);
+      }
+
+      a {
+        text-decoration: none;
+        z-index: 3;
+        color: #5266B0;
+        transition: color 450ms;
+      }
+
+      &:before {
+        content: '';
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background-color: #5266B0;
+        position: absolute;
+        bottom: -18px;
+        left: -18px;
+        transition: transform 400ms ease-in-out;
+        z-index: 1;
+      }
+    }
+
+    /*----------------------------------*/
+
+    &__hamburger {
+
+      display: none;
+
+      @media screen and (max-width: 1200px) {
+        position: fixed;
+        top: 5px;
+        right: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        width: size.$ham_width + 10px;
+        height: size.$ham_width + 10px;
+        cursor: pointer;
+        z-index: 100;
+        border-radius: 5px;
+
+        &__slice {
+          height: size.$ham_width/8;
+          width: size.$ham_width;
+          background-color: color.$mediumblue;
+          border-radius: 2px;
+          transition: all 350ms;
+        }
+
+        &__slice::before,
+        &__slice::after {
+          content: '';
+          position: absolute;
+          height: size.$ham_width/8;
+          width: size.$ham_width;
+          background-color: color.$mediumblue;
+          border-radius: 2px;
+          transition: all 350ms;
+        }
+
+        &__slice::after {
+          transform: translateY(-220%);
+        }
+
+        &__slice::before {
+          transform: translateY(220%);
+        }
+      }
+    }
+
+    &__show {
+      @media screen and (max-width: 1200px) {
+        top: 0;
+        transition: top 300ms;
+      }
+    }
+
+  }
+
+  .open .header__nav__hamburger__slice {
+    background: transparent;
+    transform: translateX(-(size.$ham_width));
+    transition: all 350ms;
+  }
+
+  .open .header__nav__hamburger__slice::before {
+    transform: rotate(-45deg) translate(size.$ham_width/1.4, size.$ham_width/1.4);
+  }
+
+  .open .header__nav__hamburger__slice::after {
+    transform: rotate(45deg) translate(size.$ham_width/1.4, -(size.$ham_width/1.4));
+  }
+}

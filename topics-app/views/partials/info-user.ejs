@@ -1,0 +1,30 @@
+<!-- Utiliser en dev pour controler les valeurs des variables lièes à la session -->
+
+<div class="infouser__button__container">
+  <div class="infouser__button" id="infouserButton">
+    <i class="fas fa-user-astronaut"></i>
+  </div>
+</div>
+
+<div class="infouser" id="infouser">
+  <p class="infouser__info" id="infoMessage"><%= session.user.message %></p>
+  <% if (session.user.id > 0) { %>
+
+  <p class="infouser__item">
+    id : <span id="infoUserId"><%= session.user.id %></span>
+  </p>
+
+  <p class="infouser__item">
+    Pseudo : <span id="userName"><%= session.user.username %></span>
+  </p>
+
+  <p class="infouser__item">Status : <%= session.user.role.name %></p>
+
+  <% } else { %>
+  <!-- <p class="infouser__item">
+    Disconnected
+  </p> -->
+  <div class="infouser__connexion">Sign in to know more...</div>
+
+  <% } %>
+</div>

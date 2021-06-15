@@ -1,0 +1,58 @@
+    <%- include('./head.ejs') %>
+
+
+    <body class="body">
+      <header class="header">
+
+        <div class="header__logo">
+          <a href="/"><h1 id="frontPageTitle">TOPIC(S)</h1></a>
+        </div>
+
+
+        <nav class="header__nav">
+
+
+          <ul class="header__nav__links">
+            <li class="header__nav__links__link"><a href="/">
+          Home
+        </a></li>
+
+            <li class="header__nav__links__link"><a href="/categories">
+          Categories
+        </a></li>
+
+            <li class="header__nav__links__link"><a href="#">
+          About
+        </a></li>
+
+          </ul>
+
+
+          <ul class="header__nav__links">
+            <% if (session.user.id > 0) {%>
+
+            <li class="header__nav__loginButton"><a href="/myProfile">
+            Profile</a></li>
+            <li class="header__nav__loginButton" id="topicsDisconnect"><a href="#">
+            Sign/out</a></li>
+
+            <% } else { %>
+
+            <li class="header__nav__loginButton"><a href="/connexion/stdLogin" >
+              Sign/in
+              </a>
+            </li>
+            <% } %>
+
+          </ul>
+
+
+        </nav>
+        <div class="header__nav__hamburger" id="nav-hamburger">
+          <div class="header__nav__hamburger__slice"></div>
+        </div>
+      </header>
+
+      <main class="main__container">
+
+        <%- include('./info-user.ejs') %>

@@ -1,0 +1,417 @@
+@use './abstract/colors'as color;
+@use './abstract/sizes'as size;
+/**************************************/
+/*********  CATEGORIES   **************/
+/**************************************/
+
+.categories {
+
+
+  &__main {
+    &__title {
+      font: 3rem "Suez One";
+      font-weight: 700;
+      color: color.$mediumblue;
+      text-align: center;
+      margin: 120px 0;
+    }
+
+    &__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__box {
+    background-color: #fff;
+    width: 350px;
+    height: 400px;
+    border-radius: 14px;
+    margin-bottom: 45px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__image {
+      display: block;
+      margin: 0 auto;
+      width: auto;
+      height: auto;
+      max-height: 60%;
+      max-width: 100%;
+      padding: 10px;
+    }
+
+    &__title {
+      position: absolute;
+      top: 50%;
+      bottom: 0;
+      font-size: 2.5rem;
+      padding-left: 60px;
+      color: color.$mediumblue;
+
+      &__container {
+        position: relative;
+        height: 40%;
+        background: left/contain no-repeat url('../assets/browse/canvas.png');
+      }
+    }
+
+    &__title:hover {
+      text-decoration: underline;
+      font-weight: 600;
+      text-decoration-style: wavy;
+    }
+
+    &__title::first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
+
+/**************************************/
+/*********    CATEGORY   **************/
+/**************************************/
+
+.categorypage__main__container {
+  display: flex;
+  margin-top: 60px;
+}
+
+.categories {
+
+  &__container {
+    // padding-top: 60px;
+    width: 200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media screen and (max-width: 850px) {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__element {
+      font: 1.4rem "PT Mono";
+      border-radius: 5px;
+      font-weight: bold;
+      color: color.$mediumblue;
+      text-align: center;
+      width: 160px;
+      background-color: color.$light;
+      padding: 5px;
+      border: 1px solid color.$bubblegumpink;
+      margin-bottom: 10px;
+      transform: rotate(0);
+      transition: transform 250ms;
+    }
+
+    &__element:hover {
+      transform: rotate(10deg);
+      transition: transform 150ms;
+    }
+  }
+
+  &__category {
+
+    &__image {
+      width: 200px;
+      margin: 30px auto;
+    }
+
+    &__title {
+      font: 2rem "PT Mono";
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 800;
+      color: color.$mediumblue;
+    }
+  }
+
+}
+
+/*--------------------------------*/
+/*--------- TOPIC / Message ------*/
+/*--------------------------------*/
+
+.messagesPage {
+  &__topicContainer {
+    padding: 20px 10vw 0 10vw;
+
+    @media screen and (max-width: 500px) {
+      padding: 20px 2vw 0 2vw;
+    }
+  }
+
+  &__mainContainer {
+    display: flex;
+  }
+}
+
+
+.topics,
+.messages {
+  &__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 0 10vw;
+
+    @media screen and (max-width: 500px) {
+      padding: 0;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.--messagesMainSmaller {
+  padding-top: 0px;
+}
+
+.message:hover .--messageFooter {
+  display: flex;
+  width: 40px;
+  min-width: 40px;
+  flex-direction: column;
+  background-color: transparent;
+}
+
+.topic,
+.message {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid color.$yellow;
+  border-radius: 5px;
+  overflow: hidden;
+
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
+  }
+
+
+  &__title {
+
+    width: 100%;
+    padding: 15px 0;
+    font: 1.6rem "Suez One";
+    color: color.$mediumblue;
+    text-align: center;
+    border: 1px solid color.$yellow;
+    border-radius: 5px;
+  }
+
+  &__header {
+    width: 80px;
+    min-width: 80px;
+
+    &__author {
+      font: 1rem "Suez One";
+      color: color.$mediumblue;
+      text-align: center;
+    }
+
+    & img {
+      width: 100%;
+      max-height: 100px;
+      width: 100%;
+    }
+
+    &__createDate {
+      color: color.$mediumblue;
+      font-size: size.$font-XS;
+      text-align: center;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    padding: 8px;
+
+    &__title {
+      font: 1rem "Suez One";
+      color: color.$mediumblue;
+      margin: 5px;
+    }
+
+    &__description {
+      font: 0.8rem "PT Mono";
+      color: color.$mediumblue;
+    }
+
+
+  }
+
+  &__footer {
+    width: 80px;
+    min-width: 80px;
+    position: relative;
+    background-color: color.$verylightblue;
+
+    @media screen and (max-width: 650px) {
+      display: flex;
+      width: 100%;
+      height: 40px;
+    }
+
+    &__title {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      color: color.$grey;
+      font-size: size.$font-XS;
+      padding: 5px;
+      text-align: center;
+
+      @media screen and (max-width: 650px) {
+        text-align: left;
+      }
+    }
+
+    &__nbMessages {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: color.$mediumblue;
+
+      @media screen and (max-width: 650px) {
+        align-items: flex-end;
+        width: 60px;
+        padding: 5px;
+      }
+    }
+  }
+
+  &__topic {
+    border: none;
+    margin-top: 10px;
+
+    &__main {
+      padding: 20px 20px 0 20px;
+
+      &__description {
+        font: size.$font-L "PT Mono";
+        color: color.$mediumblue;
+      }
+    }
+  }
+
+  &__button {
+    &__control {
+      border: none;
+      width: 50%;
+      background-color: transparent;
+      padding: 8px;
+      color: color.$darkblue;
+      cursor: pointer;
+    }
+
+    &__row {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      justify-content: space-around;
+
+      @media screen and (max-width: 650px) {
+        width: 70px;
+        right: 5px;
+      }
+    }
+  }
+
+  /*-------------------------------------------------*/
+  /*--------- TOPIC AND MESSAGE FORM-----------------*/
+  /*-------------------------------------------------*/
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    margin: 60px;
+
+    @media screen and (max-width: 500px) {
+      margin: 30px 0;
+    }
+
+    &__title {
+      width: 50%;
+      padding: 10px 20px;
+      margin-bottom: 10px;
+      min-width: 300px;
+      border: none;
+      border-bottom: 1px solid color.$bubblegumpink;
+    }
+
+    &__row {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &__editorContainer {
+      background-color: white;
+      display: flex;
+      flex-direction: column-reverse;
+      width: 100%;
+      height: auto;
+
+      .ql-snow {
+        border: none;
+        border-bottom: 1px solid color.$bubblegumpink;
+      }
+
+      .ql-editor {
+        min-height: 150px;
+      }
+    }
+
+    &__hidden {
+      display: none;
+    }
+
+    &__submitBtn {
+      width: 20%;
+      height: 40px;
+      margin: 15px 0;
+      border: none;
+      border-radius: 5px;
+      background-color: color.$darkblue;
+      color: color.$light;
+      font-size: 12px;
+      cursor: pointer;
+
+      @media (max-width: 768px) {
+        margin: 10px 0;
+      }
+    }
+  }
+}
+
+.--topicHiddenForm {
+  display: none;
+}
+
+.--messageFooter {
+  display: none;
+}

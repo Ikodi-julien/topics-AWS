@@ -1,0 +1,13 @@
+
+INSERT INTO forum.users (pseudo, firstname, lastname, password, email, status) VALUES
+('J-P', 'Julien', 'Pellin', '$2b$10$EUaudgeyxHm8Tl0PwEQxi.fGH.8BXR8J3aLyMCZfsDqoIqsdWAeby', 'jupellin39@gmail.com',   'dev');
+
+INSERT INTO forum.category ("name") VALUES
+('animals'),
+('arts'),
+('bdsm'),
+('cinema'),
+('sports'),
+('technology'),
+('videogames');
+

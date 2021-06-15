@@ -1,0 +1,77 @@
+<%- include('./partials/head') %>
+
+<body class="body">
+
+
+  <main class="main__container connexion">
+
+    <%- include('./partials/info-user') %>
+    <!-- ICI LA VUE CREATE ACCOUNT -->
+
+    <%- include("partials/createAccount") %>
+
+    <!-- ICI LA VUE LOST PASSWORD -->
+
+    <%- include("partials/lostPass") %>
+
+    <!-- ICI VUE LOGIN -->
+
+    <div class="connexion__container">
+      <div class="connexion__commBox">
+        <h2 class="connexion__commBox__title">TOPIC(S)</h2>
+        <p class="connexion__commBox__text">Create and react to all kinds of topics.
+          Our limit is your imagination.</p>
+      </div>
+
+      <div class="connexion__form__container">
+        <div class="connexion__form__buttonRow">
+          <a href="<%= locals.urlGoogle %> " class="connexion__button__service">
+            <img
+            src="/src/assets/logo_google.png"
+            alt="logo Google"
+            height="80%"
+            />
+          </a>
+          <a href="<%= locals.urlGithub %>" class="connexion__button__service">
+            <img
+            src="/src/assets/Daco_335636.png"
+            alt="logo Google"
+            height="80%"
+            />
+          </a>
+
+        </div>
+
+        <hr class="connexion__form__hr connexion__form__hr__OR ">
+
+        <form action="/postConnexion/stdLogin" method="POST" class="connexion__form">
+          <input
+        type="email"
+        name="email"
+        class="connexion__form__input"
+        placeholder="Email address"
+        id="email"
+      />
+          <input
+        type="password"
+        name="password"
+        class="connexion__form__input"
+        placeholder="Password"
+        id="password"
+      />
+
+          <button type="submit"  class="connexion__button__connexion">Connexion</button>
+        </form>
+
+        <p class="connexion__form__forgotPass" id="showLostPass">Forgot password ?</p>
+
+        <hr class="connexion__form__hr">
+
+        <button class="connexion__button__createProfile" id="showCreateProfile">
+          Create profile
+        </button>
+
+      </div>
+    </div>
+
+    <%- include("partials/footer.ejs") %>

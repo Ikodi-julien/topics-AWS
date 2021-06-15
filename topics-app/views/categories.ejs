@@ -1,0 +1,25 @@
+<%- include("partials/header.ejs") %>
+
+<h1 class="categories__main__title">Explore all topics</h1>
+
+<div class="categories__main__container">
+  <% categories.forEach(category => { %>
+  <a href="/categories/<%=category.name%>">
+
+			<article class="categories__box">
+						<img 
+							class="categories__box__image" 
+							src="/src/assets/browse/<%= category.name %>.png"
+							alt="cartoon of a <%=category.name%>">
+				<div class="categories__box__title__container">
+						<h2 class="categories__box__title">
+								<%=category.name%>
+						</h2>
+				</div>
+			</article>
+		</a>
+
+  <% }); %>
+</div>
+
+<%- include("partials/footer.ejs") %>

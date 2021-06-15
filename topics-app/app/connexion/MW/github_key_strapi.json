@@ -1,0 +1,7 @@
+{
+  "client_id": "83232fd34192b813e376",
+  "client_secret": "d445afb074f55ec997feac613c2c9c7b46c0c9ec",
+  "redirect_uris": [
+      "https://topics.quillers.fr/connexion/github"],
+  "javascript_origins": ["https://topics.quillers.fr"]
+}

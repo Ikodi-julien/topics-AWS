@@ -1,0 +1,86 @@
+<%- include("partials/header.ejs") %>
+
+<div class="categorypage__main__container">
+
+  <%- include("partials/categoriesAside") %>
+
+
+  <div class="topics__main">
+    <div class="topics__container">
+      <span id="catId" style="display:none;"><%= currentCategory.id %></span>
+      <h1 class="categories__category__title"><%= currentCategory.name %></h1>
+
+      <!-- ICI S'INSÈRE LES TOPICS -->
+
+    </div>
+
+    <!-- ici débute le formulaire -->
+
+    <% if (session.user.id > 0) { %>
+
+    <form method="post" data-action="/topics" id="form" class="topic__form">
+
+      <input
+      type="text"
+      name="topic__title"
+      id="topic__title"
+      class="topic__form__title"
+      placeholder="title of your topic..."
+   />
+
+      <div class="topic__form__editorContainer">
+        <div id="editor"></div>
+      </div>
+      <!-- </div> -->
+      <textarea
+        name="topic__desc"
+        id="form_content"
+        class="topic__form__hidden"
+     ></textarea>
+      <button class="topic__form__submitBtn" type="submit">Poster la description</button>
+
+
+    </form>
+    <% } %>
+
+    <!-- FIN FORMULAIRE on ferme topic__main ici dessous !-->
+  </div>
+  <!-- On ferme categoryPage__main__container ici dessous !-->
+</div>
+
+<%- include("partials/footer.ejs") %>
+
+<!-- *********************************************************** -->
+<!-- *********** TEMPLATE TOPIC ******************************** -->
+<!-- *********************************************************** -->
+
+<template id="topicTemplate">
+
+    <article class="topic">
+      <header class="topic__header">
+        <!-- Mettre une photo et nom auteur -->
+        <img src="/src/assets/default_user.png" alt="avatar">
+        <h3 class="topic__header__author">by <span class="topicAuthor"></span></h3>
+        <p class="topic__header__createDate">
+          le <time><span class="topicCreatedAt"></span></time>
+        </p>
+      </header>
+      
+      <main class="topic__main">
+        <a href="" class="topicMessagesHref">
+            <h2 class="topic__main__title"></h2>
+        </a>
+        <div class="topic__main__description" id=""></p>
+      </main>
+
+      <footer class="topic__footer">
+        <div class="topic__footer__title">Comments</div>
+        <div class="topic__footer__nbMessages"><span class="nbMessages"></span></div>
+        
+        <div class="topic__button__row">
+        </div>
+
+      </footer>
+  </article>
+  
+</template>

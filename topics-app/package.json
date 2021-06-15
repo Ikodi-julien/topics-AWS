@@ -1,0 +1,38 @@
+{
+  "name": "forum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node-dev index.js",
+    "build": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.0",
+    "cookie-session": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "generate-password": "^1.6.0",
+    "googleapis": "^67.1.0",
+    "node-dev": "^6.2.0",
+    "node-fetch": "^2.6.1",
+    "nodemailer": "^6.4.18",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "nodemon": "^2.0.7",
+    "pg": "^8.5.1",
+    "quill-emoji": "^0.1.8"
+  },
+  "devDependencies": {
+    "css-loader": "^5.2.0",
+    "style-loader": "^2.0.0",
+    "sass": "^1.32.8",
+    "sass-loader": "^11.0.1",
+    "webpack": "^5.28.0",
+    "webpack-cli": "^4.5.0"
+  }
+}

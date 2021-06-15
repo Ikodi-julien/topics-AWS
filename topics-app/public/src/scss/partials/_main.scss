@@ -1,0 +1,51 @@
+@use './abstract/colors'as color;
+@use './abstract/sizes'as size;
+
+/*-------------------------------------------*/
+/*-------------------------------------------*/
+/*-------------------------------------------*/
+
+html {
+  font-family: 'Domine', serif;
+  background-color: color.$light;
+  min-height: 100vh;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+.main__container {
+  position: relative;
+  overflow: hidden;
+  min-height: 82vh;
+}
+
+
+.footer {
+  margin-top: 4vh;
+  width: 100%;
+  height: 5vh;
+  background-color: color.$darkblue;
+  display: flex;
+  align-items: center;
+}

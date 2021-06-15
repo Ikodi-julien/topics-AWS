@@ -1,0 +1,154 @@
+@use './abstract/colors'as color;
+@use './abstract/sizes'as size;
+
+.frontPage {
+
+  &__container {
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15vh;
+    width: 100%;
+    height: 100%;
+
+    @media screen and(max-width: 850px) {
+      padding-top: 2vh;
+    }
+
+    &__presentation {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      min-height: 75vh;
+      padding-bottom: 15vh;
+
+      @media screen and(max-width: 850px) {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 2vh;
+
+      }
+
+
+      &__bubble {
+        width: 50%;
+        background-image: url(../assets/home/formes_geometriques/Ellipse_2.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: flex;
+        justify-content: center;
+        z-index: 2;
+
+        @media screen and(max-width: 850px) {
+          width: 80%;
+        }
+      }
+
+      &__image {
+        width: 50%;
+
+        &__wizard {
+          display: flex;
+          justify-content: center;
+
+          & img {
+            @media screen and (max-width: 500px) {
+              width: 95%;
+            }
+          }
+        }
+
+        &__book {
+          display: flex;
+          justify-content: center;
+          padding: 5vw;
+
+          & img {
+            @media screen and (max-width: 500px) {
+              width: 95%;
+            }
+          }
+        }
+
+        &__crystal {
+          display: flex;
+          justify-content: center;
+          padding: 5vw;
+
+          & img {
+            @media screen and (max-width: 500px) {
+              width: 95%;
+            }
+          }
+        }
+      }
+
+      &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 50%;
+        color: color.$mediumblue;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 4em;
+        line-height: 84px;
+        letter-spacing: -0.06em;
+        text-align: center;
+        padding: 0 3vw;
+        z-index: 2;
+
+        @media screen and (max-width: 850px) {
+          font-size: 3.5em;
+          line-height: 60px;
+          padding: 5%;
+
+        }
+
+        @media screen and (max-width: 500px) {
+          font-size: 2em;
+          line-height: inherit;
+          width: 90%;
+        }
+
+        &.--width100 {
+          width: 100%;
+          padding: 8vw
+        }
+      }
+    }
+
+    &__upperPolygon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60%;
+      height: 50%;
+      background: no-repeat url('./../assets/home/formes_geometriques/Polygon_4.png');
+      background-size: 100% 100%;
+      z-index: 1;
+
+      @media screen and(max-width: 850px) {
+        display: none;
+      }
+    }
+
+    &__lowerPolygon {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60%;
+      height: 50%;
+      background: no-repeat url('./../assets/home/formes_geometriques/Polygon_3.png');
+      background-size: 100% 100%;
+      z-index: 1;
+
+      @media screen and(max-width: 850px) {
+        display: none;
+      }
+    }
+  }
+}

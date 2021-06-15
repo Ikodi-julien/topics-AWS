@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+
+<!-- On amis les catégories dans le header, reste à
+   mettre les sujets principaux dans l'accueil ? -->
+
+<h2>Supprimer un utilisateur</h2>
+
+<div class="connexion__formContainer">
+  <form action="/postConnexion/deleteUser" method="POST" class="connexion__form">
+    <label for="pseudo" class="connexion__form__item">Son id</label>
+    <input
+      type="number"
+      name="id"
+      class="connexion__form__item"
+      id="id"
+    />
+    <button type="submit" class="connexion__form__item">Valider</button>
+
+  </form>
+</div>
+
+<%- include("partials/footer.ejs") %>

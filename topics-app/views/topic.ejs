@@ -1,0 +1,98 @@
+<%- include("partials/header.ejs") %>
+
+<div class="messagesPage__topicContainer">
+  <span id="catId" style="display:none;"><%= currentCategory.id %></span>
+  <span id="topicId" style="display:none;"><%= topic.id %></span>
+  <span id="topicContent" style="display:none;"><%= JSON.stringify(topic.topic_content.ops)%></span>
+  <!-- style="display:none;" -->
+  <h2 class="topic__title" ><%= topic.title %> </h2>
+  <!-- description of the thread is set as the first message -->
+  <article class="topic message__topic">
+    <header class="topic__header">
+      <!-- Mettre une photo et nom auteur -->
+      <img src="/src/assets/default_user.png" alt="avatar">
+      <h3 class="topic__header__author">by <%= topic.username %></h3>
+      <p class="topic__header__createDate">
+        le <time><%= new Date(topic.created_at).toLocaleDateString() %></time>
+      </p>
+    </header>
+
+    <main class="topic__main message__topic__main ">
+      <h2 class="topic__main__title"></h2>
+      <p class="message__topic__main__description" id="mainTopicEditor"></p>
+    </main>
+
+  </article>
+</div>
+
+
+<div class="messagesPage__mainContainer">
+  <!-- ----------------------------------------------- -->
+
+  <%- include("partials/categoriesAside") %>
+
+  <!-- ----------------------------------------------- -->
+  <div class="messages__main --messagesMainSmaller">
+
+    <div class="messages__container">
+
+      <div id="message-list" class="message__list">
+
+        <!-- --------------------------------------------- -->
+        <!-- here insert messages from API -->
+        <!-- --------------------------------------------- -->
+
+      </div>
+
+      <!-- form to post messages-->
+      <% if (session.user.token !== '') { %>
+
+      <form method="post" action="#" id="form" class="message__form">
+
+        <div class="topic__form__editorContainer">
+          <div id="editor"></div>
+        </div>
+        <textarea
+            name="message"
+            id="form_content"
+            class="topic__form__hidden"
+        ></textarea>
+        <button class="topic__form__submitBtn" type="submit">Poster</button>
+      </form>
+      <% } %>
+
+    </div>
+
+  </div>
+</div>
+<%- include("partials/footer.ejs") %>
+
+<!-- ************************************* -->
+<!-- ************ MESSAGE TEMPLATE ******* -->
+<!-- ************************************* -->
+
+<template id="messageTemplate">
+  <article class="message">
+
+    <header class="message__header">
+
+      <img src="/src/assets/default_user.png" alt="avatar">
+      <h3 class="message__header__author">???</h3>
+
+      <p class="message__header__createDate">
+        le 
+        <time id="messageCreatedAt">???</time>
+      </p>
+
+    </header>
+
+    <section class="message__main">
+      <p class="message__main__description">
+        ???
+      </p>
+    </section>
+
+    <footer class="message__footer --messageFooter">
+    </footer>
+  </article>
+</template>
