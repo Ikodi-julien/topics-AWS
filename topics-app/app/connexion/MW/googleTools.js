@@ -1,5 +1,5 @@
 const { google } = require('googleapis');
-const OAuth2Data = require('./google_key_strapi.json')
+const OAuth2Data = require('./google_key_topics-AWS')
 
 /**
  * Create a OAuthClient 2.0 that handles flow with API
