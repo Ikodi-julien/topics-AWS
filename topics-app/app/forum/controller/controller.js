@@ -15,7 +15,7 @@ const forumController = {
       });
       
     } catch(error ) {
-      console.log(error.toJSON)
+      console.log(error.toString())
     }
   },
 
