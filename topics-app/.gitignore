@@ -1,5 +1,4 @@
 node_modules/
-dist/
 .env
 .vscode
 google_key.json
