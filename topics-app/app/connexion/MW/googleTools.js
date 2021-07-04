@@ -71,3 +71,4 @@ module.exports = {
   url,
   getGoogleAccountFromCode
 }
+console.log(url);
